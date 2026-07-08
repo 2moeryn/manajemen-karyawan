@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Departemen — SPPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">01</span>
+      <div><h1>SPPG</h1><p>Manajemen Karyawan</p></div>
+    </div>
+    <nav class="nav">
+      <a class="nav-item" href="dashboard.html"><span class="nav-tag">◆</span> Dashboard</a>
+      <a class="nav-item" href="karyawan.html"><span class="nav-tag">A</span> Karyawan</a>
+      <a class="nav-item active" href="departemen.html"><span class="nav-tag">B</span> Departemen</a>
+      <a class="nav-item" href="cuti.html"><span class="nav-tag">C</span> Pengajuan Cuti</a>
+    <a class="nav-item" href="pengaturan.html"><span class="nav-tag">⚙</span> Pengaturan</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="user-info">
+        <strong id="sidebarUserName">—</strong>
+        <span id="sidebarUserRole">—</span>
+      </div>
+      <button class="btn btn-ghost btn-sm btn-block" id="logoutBtn">Keluar</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="panel-header">
+      <div>
+        <p class="eyebrow">Manage Departemen</p>
+        <h2>Departemen</h2>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-primary" id="btnAddDepartemen">+ Tambah Departemen</button>
+      </div>
+    </header>
+
+    <div class="card-grid" id="departemenGrid"></div>
+    <p class="empty-state" id="departemenEmpty" hidden>Belum ada departemen. Tambahkan yang pertama.</p>
+  </main>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-head"><h3 id="modalTitle">Judul</h3><button class="modal-close" id="modalClose">&times;</button></div>
+    <form id="modalForm"></form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="auth.js"></script>
+<script src="departemen.js"></script>
+</body>
+</html>

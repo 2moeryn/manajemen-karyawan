@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — SPPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">01</span>
+      <div><h1>SPPG</h1><p>Manajemen Karyawan</p></div>
+    </div>
+    <nav class="nav">
+      <a class="nav-item active" href="dashboard.html"><span class="nav-tag">◆</span> Dashboard</a>
+      <a class="nav-item" href="karyawan.html"><span class="nav-tag">A</span> Karyawan</a>
+      <a class="nav-item" href="departemen.html"><span class="nav-tag">B</span> Departemen</a>
+      <a class="nav-item" href="cuti.html"><span class="nav-tag">C</span> Pengajuan Cuti</a>
+    <a class="nav-item" href="pengaturan.html"><span class="nav-tag">⚙</span> Pengaturan</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="user-info">
+        <strong id="sidebarUserName">—</strong>
+        <span id="sidebarUserRole">—</span>
+      </div>
+      <button class="btn btn-ghost btn-sm btn-block" id="logoutBtn">Keluar</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="panel-header">
+      <div>
+        <p class="eyebrow">Home</p>
+        <h2>Dashboard</h2>
+      </div>
+    </header>
+
+    <div class="dashboard-grid">
+      <div class="metric-card">
+        <span class="dept-count" id="mKaryawan">0</span>
+        <div class="dept-count-label">Karyawan Aktif</div>
+      </div>
+      <div class="metric-card">
+        <span class="dept-count" id="mDepartemen">0</span>
+        <div class="dept-count-label">Departemen</div>
+      </div>
+      <div class="metric-card">
+        <span class="dept-count" id="mCutiMenunggu">0</span>
+        <div class="dept-count-label">Cuti Menunggu Persetujuan</div>
+      </div>
+    </div>
+
+    <section style="margin-top:32px;">
+      <p class="eyebrow">Pengajuan Cuti Terbaru</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Karyawan</th><th>Jenis</th><th>Mulai</th><th>Selesai</th><th>Status</th></tr></thead>
+          <tbody id="recentCutiBody"></tbody>
+        </table>
+        <p class="empty-state" id="recentCutiEmpty" hidden>Belum ada pengajuan cuti.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="auth.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
